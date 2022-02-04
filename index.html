@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Firebase Database</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+
+        <!-- container and title -->
+        <div class="container my-4">
+            <h1 class="my-4 text-center">Jellyfish Chat</h1>
+
+            <!-- buttons for chatrooms -->
+            <div class="chat-rooms mb-3 text-center">
+                <div class="my-2">Choose chatroom:</div>
+                <button class="btn" id="general">#general</button>
+                <button class="btn" id="gaming">#gaming</button>
+                <button class="btn" id="music">#music</button>
+                <button class="btn" id="jellyfish">#jellyfish</button>
+            </div>
+            <!-- chat list / window  -->
+            <div class="chat-window">
+                <ul class="chat-list list-group"></ul>
+            </div>
+            <!-- new chat form  -->
+            <form class="new-chat my-3">
+                <div class="input-group">
+                    <div class="input-group-prepand">
+                        <div class="input-group-text">Your message:</div>
+                    </div>
+                    <input type="text" id="message" class="form-control" required>
+                    <div class="input-group-append">
+                        <input type="submit" class="btn" value="send">
+                    </div>
+                </div>
+            </form>
+            
+            <!-- update name form  -->
+            <form class="new-name my-3">
+                <div class="input-group">
+                    <div class="input-group-prepand">
+                        <div class="input-group-text">Update name:</div>
+                    </div>
+                    <input type="text" id="name" class="form-control" required>
+                    <div class="input-group-append">
+                        <input type="submit" class="btn" value="update">
+                    </div>
+                </div>
+
+                <div class="update-mssg"></div>
+            </form>
+
+        </div>
+
+
+
+      <script src="http://cdn.date-fns.org/v1.9.0/date_fns.min.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js"></script>
+      <script>
+          //Initialize firebase
+        var config = {
+            apiKey: "AIzaSyARhuobNZ7yjMU7bGdwfKDfIqIC2rsIcLc",
+            authDomain: "javascript-basic-4a754.firebaseapp.com",
+            databaseURL: "https://javascript-basic-4a754-default-rtdb.firebaseio.com",
+            projectId: "javascript-basic-4a754",
+            storageBucket: "javascript-basic-4a754.appspot.com",
+            messagingSenderId: "795018421770",
+            appId: "1:795018421770:web:f8643727845b22d6a4a1f3",
+            measurementId: "G-828HZ8L0KN"
+            };
+        
+        firebase.initializeApp(config);
+        const db = firebase.firestore();
+       
+      </script>
+
+
+     <script src="scripts/chat.js"></script>
+     <script src="scripts/ui.js"></script>
+     <script src="scripts/app.js"></script>
+    </body>
+</html>
